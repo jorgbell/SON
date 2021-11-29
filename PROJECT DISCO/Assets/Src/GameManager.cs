@@ -1,22 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum ROOM
-{
-    OUTSIDE,
-    DISCO,
-    BATHROOM,
-    POOL
-}
 
 public class GameManager : MonoBehaviour
 {
     private GameManager _instance = null;
-    private ROOM _actualRoom;
-    
+    private ROOM _actualRoom = ROOM._MAX; //inicializamos vacío
+    public EnableByRoom[] rooms = new EnableByRoom[(int)ROOM._MAX];
     
     private void Awake()
-    {
+    {        
         //patrón singleton
         if (_instance != null)
         {
@@ -29,48 +22,43 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-        _actualRoom = ROOM.OUTSIDE;
+        if (rooms.Length != (int)ROOM._MAX)
+            Debug.LogError("NECESITAS PONER MÁS/MENOS HABITACIONES O MODIFICAR EL ENUM");
+        //inicializamos el juego en las afueras
+        changeRoom(ROOM.OUTSIDE);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (_actualRoom + 1 == ROOM._MAX)
+                changeRoom(ROOM.OUTSIDE);
+            else
+                changeRoom(_actualRoom + 1);
+        }
     }
 
 
     public void changeRoom(ROOM newRoom)
     {
+        
         if (newRoom == _actualRoom)
         {
-            Debug.LogError("Estás indicando que entra y sale de la misma habitación");
+            Debug.LogWarning("Estás indicando que entra y sale de la misma habitación");
             return;
         }
-        //resetea valores que indican que SALES de una habitacion
-        switch (_actualRoom)
+        if(_actualRoom != ROOM._MAX) //En caso de que no esté aún en ninguna sala, no hay que parar ningún sonido
         {
-            case ROOM.OUTSIDE:
-                
-                break;
-            case ROOM.DISCO:
-                break;
-            case ROOM.BATHROOM:
-                break;
-            case ROOM.POOL:
-                break;
+            //le indica a los sonidos de esa sala que paren de emitir todos los eventos
+            rooms[(int)_actualRoom].stopSounds();
         }
-        //setea los valores que indican que estás DENTRO de una habitación
+        //le indica a los sonidos de esa sala que empiecen a emnitir los eventos
         _actualRoom = newRoom;
-        switch (_actualRoom){
-            case ROOM.OUTSIDE:
-                break;
-            case ROOM.DISCO:
-                break;
-            case ROOM.BATHROOM:
-                break;
-            case ROOM.POOL:
-                break;
-        }
+        rooms[(int)_actualRoom].startSounds();
+
+        Debug.Log(_actualRoom);
+
     }
 }
