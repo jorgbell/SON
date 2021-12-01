@@ -47,5 +47,17 @@ namespace FMODUnity
                 }
             }
         }
+        public void TriggerParameters(float value)
+        {
+            if (!string.IsNullOrEmpty(parameter))
+            {
+                FMOD.RESULT result = RuntimeManager.StudioSystem.setParameterByID(parameterDescription.id, value);
+                if (result != FMOD.RESULT.OK)
+                {
+                    RuntimeUtils.DebugLogError(string.Format(("[FMOD] StudioGlobalParameterTrigger failed to set parameter {0} : result = {1}"), parameter, result));
+                }
+            }
+        }
+
     }
 }

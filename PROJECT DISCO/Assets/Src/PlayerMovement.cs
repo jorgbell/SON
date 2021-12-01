@@ -15,12 +15,14 @@ public class PlayerMovement : MonoBehaviour
     public Transform _feet; 
     public float _checkSphereRadius = 0.4f;
     public LayerMask _groundMask;
-
     private bool _isOnGround;
 
+    //SOUND
+    private FMODUnity.StudioGlobalParameterTrigger walkGlobalParameter;
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
+        walkGlobalParameter = GetComponent<FMODUnity.StudioGlobalParameterTrigger>();
     }
     void Update()
     {
@@ -31,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        int isWalkingNow = (x != 0 || z != 0) ? 1 : 0;
+        //set sound global parameters
+        walkGlobalParameter.TriggerParameters(isWalkingNow);
+
 
         Vector3 movement = transform.right * x + transform.forward * z;
 

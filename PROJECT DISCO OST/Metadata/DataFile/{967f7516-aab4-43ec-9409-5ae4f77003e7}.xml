@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="DataFile" id="{967f7516-aab4-43ec-9409-5ae4f77003e7}">
 		<property name="assetPath">
-			<value>Night/cricket.m4a</value>
+			<value>Outdoors/Night/cricket.m4a</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{1dc979b3-1c30-40f6-befc-0387ca49d968}</destination>
