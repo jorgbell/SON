@@ -165,7 +165,14 @@
 			<destination>{279e1ee9-908d-4c0d-99da-5d4dd2fa3ecd}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{a52c26dc-2c66-4990-8400-8fe5ec9b7981}" />
+	<object class="MixerBusPanner" id="{a52c26dc-2c66-4990-8400-8fe5ec9b7981}">
+		<property name="surroundPanDirection">
+			<value>-12.5288076</value>
+		</property>
+		<property name="surroundPanExtent">
+			<value>278.824005</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{cf302ab4-ddc8-4ee1-a6fd-878db450326f}" />
 	<object class="Automator" id="{ee641bd3-34eb-4ea2-a7b8-a55d38baa864}">
 		<property name="nameOfPropertyBeingAutomated">
@@ -187,7 +194,10 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>17.5</value>
+			<value>16.5</value>
+		</property>
+		<property name="minimumExtent">
+			<value>274</value>
 		</property>
 	</object>
 	<object class="AutomationCurve" id="{78741a89-799c-4602-9fbe-c0dab1c8b1da}">

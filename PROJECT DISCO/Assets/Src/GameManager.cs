@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     private GameManager _instance = null;
     private ROOM _actualRoom = ROOM._MAX; //inicializamos vacío
-    public EnableByRoom[] rooms = new EnableByRoom[(int)ROOM._MAX];
-    private FMODUnity.StudioGlobalParameterTrigger roomTrigger;
+    public RoomBehaviour[] rooms = new RoomBehaviour[(int)ROOM._MAX];
+    public FMODUnity.StudioGlobalParameterTrigger roomTrigger;
+
     private void Awake()
     {        
         //patrón singleton
@@ -22,7 +24,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        roomTrigger = GetComponent<FMODUnity.StudioGlobalParameterTrigger>();
         if (rooms.Length != (int)ROOM._MAX)
             Debug.LogError("NECESITAS PONER MÁS/MENOS HABITACIONES O MODIFICAR EL ENUM");
         //inicializamos el juego en las afueras
@@ -39,6 +40,8 @@ public class GameManager : MonoBehaviour
             else
                 changeRoom(_actualRoom + 1);
         }
+
+        rooms[(int)_actualRoom].logic();
     }
 
 
@@ -50,15 +53,15 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("Estás indicando que entra y sale de la misma habitación");
             return;
         }
-        if(_actualRoom != ROOM._MAX) //En caso de que no esté aún en ninguna sala, no hay que parar ningún sonido
+        if(_actualRoom != ROOM._MAX) //En caso de que no esté aún en ninguna sala, no hay que desactivar ninguna
         {
             //le indica a los sonidos de esa sala que paren de emitir todos los eventos
-            rooms[(int)_actualRoom].stopSounds();
+            rooms[(int)_actualRoom].disable();
         }
         //le indica a los sonidos de esa sala que empiecen a emnitir los eventos
         _actualRoom = newRoom;
         roomTrigger.TriggerParameters((int)_actualRoom);
-        rooms[(int)_actualRoom].startSounds();
+        rooms[(int)_actualRoom].enable();
 
         Debug.Log(_actualRoom);
 
