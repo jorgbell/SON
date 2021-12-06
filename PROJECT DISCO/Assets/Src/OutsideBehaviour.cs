@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class OutsideBehaviour : RoomBehaviour
 {
-    private FMODUnity.StudioGlobalParameterTrigger nightValueParameter;
-
     private float nightValue = 0f;
     private float nextTime = 0.0f;
     public float nightValueChangeTime = 0.1f; //seconds
     public float changePerTime = 0.01f; //each nightValueChangeTime it changes this value
-    private void Awake()
-    {
-        nightValueParameter = GetComponent<FMODUnity.StudioGlobalParameterTrigger>();
-    }
+
 
     //OVERRIDE
     public override void logic()
@@ -37,8 +32,7 @@ public class OutsideBehaviour : RoomBehaviour
             }
 
             nightValue += changePerTime;
-            Debug.Log(nightValue);
-            roomEmitters[0]._emitter.SetParameter("NightValue", nightValue);
+            _pools[0].getSound(0).SetParameter("NightValue", nightValue);
         }
 
     }

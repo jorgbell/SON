@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4bd070d3-97f4-4538-a157-03d33d90ad1c}">
+		<property name="assetPath">
+			<value>General/NPC/Laugh/junto.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>20.896054421768707</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1dc979b3-1c30-40f6-befc-0387ca49d968}</destination>
+		</relationship>
+	</object>
+</objects>

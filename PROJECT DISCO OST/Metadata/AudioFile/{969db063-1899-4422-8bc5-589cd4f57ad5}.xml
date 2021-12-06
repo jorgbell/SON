@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{969db063-1899-4422-8bc5-589cd4f57ad5}">
+		<property name="assetPath">
+			<value>General/NPC/Party/4.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>22.871354166666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1dc979b3-1c30-40f6-befc-0387ca49d968}</destination>
+		</relationship>
+	</object>
+</objects>

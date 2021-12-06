@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class RoomBehaviour : MonoBehaviour
 {
-    [System.Serializable]
-    public struct Emitter
-    {
-        public FMODUnity.StudioEventEmitter _emitter;
-        public bool fadeOut;
-    }
+    public ObjectsPool[] _pools;
     //Objetos de esta sala que emiten sonidos y son continuos según estás o no dentro de la misma
-    public Emitter[] roomEmitters;
     protected bool roomEnabled;
     public bool isEnabled() { return roomEnabled; }
 
@@ -35,35 +29,22 @@ public class RoomBehaviour : MonoBehaviour
 
     public void startSounds()
     {
-        foreach(Emitter e in roomEmitters)
+
+        foreach(ObjectsPool p in _pools)
         {
-            //ENCIENDE todos los eventos asociados
-            e._emitter.Play();
+            p.Initialize();
         }
+
     }
 
     public void stopSounds()
     {
-        foreach (Emitter e in roomEmitters)
+        foreach (ObjectsPool p in _pools)
         {
-            //APAGA todos los eventos asociados
-            if (e.fadeOut)
-            {
-                StartCoroutine(fader(e));
-            }
-            else
-                e._emitter.Stop();
+            p.Stop();
         }
     }
-    
-    IEnumerator fader(Emitter e)
-    {
-        e._emitter.SetParameter("Fade", 0);
-        yield return new WaitForSeconds(3);
-        e._emitter.Stop();
-        yield return null;
-
-    }
+ 
 
 
 }

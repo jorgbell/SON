@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{330949ab-950b-4a2e-9c8a-a6f17d9568eb}">
+		<property name="assetPath">
+			<value>General/NPC/Talk/3.flac</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>68.847999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1dc979b3-1c30-40f6-befc-0387ca49d968}</destination>
+		</relationship>
+	</object>
+</objects>

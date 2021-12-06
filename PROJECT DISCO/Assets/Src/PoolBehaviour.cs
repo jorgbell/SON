@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PoolBehaviour : RoomBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void logic()
     {
-        
+        if (!roomEnabled)
+            return;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void enable()
     {
-        
+        base.enable();
+    }
+
+    public override void disable()
+    {
+        base.disable();
     }
 }
