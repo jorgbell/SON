@@ -12,13 +12,15 @@ public class PlayerMovement : MonoBehaviour
 
     public float _gravityFactor = -9.81f;
     //check para saber si está en el suelo
-    public Transform _feet; 
+    public Transform _feet;
     public float _checkSphereRadius = 0.4f;
     public LayerMask _groundMask;
     private bool _isOnGround;
 
     //SOUND
     private FMODUnity.StudioGlobalParameterTrigger walkGlobalParameter;
+
+
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
@@ -44,6 +46,4 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += _gravityFactor * Time.deltaTime;
         _controller.Move(velocity * Time.deltaTime); //la formula de la velocidad multiplica por t al cuadrado
     }
-
-
 }

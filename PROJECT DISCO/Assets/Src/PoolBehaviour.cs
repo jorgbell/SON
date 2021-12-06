@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class PoolBehaviour : RoomBehaviour
 {
-    public override void logic()
-    {
-        if (!roomEnabled)
-            return;
-    }
 
     public override void enable()
     {

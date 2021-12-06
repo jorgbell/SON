@@ -9,6 +9,8 @@ public class RoomBehaviour : MonoBehaviour
     protected bool roomEnabled;
     public bool isEnabled() { return roomEnabled; }
 
+
+ 
     public virtual void enable()
     {
         roomEnabled = true;
@@ -20,11 +22,6 @@ public class RoomBehaviour : MonoBehaviour
         stopSounds();
     }
 
-    //OVERRIDE
-    public virtual void logic()
-    {
-        ;
-    }
 
 
     public void startSounds()
@@ -44,7 +41,7 @@ public class RoomBehaviour : MonoBehaviour
             p.Stop();
         }
     }
- 
+
 
 
 }

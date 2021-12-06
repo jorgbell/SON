@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private GameManager _instance = null;
+    public static GameManager _instance = null;
     private ROOM _actualRoom = ROOM._MAX; //inicializamos vacío
     public RoomBehaviour[] rooms = new RoomBehaviour[(int)ROOM._MAX];
     public FMODUnity.StudioGlobalParameterTrigger roomTrigger;
+    public PlayerMovement player;
 
     private void Awake()
     {        
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         if (rooms.Length != (int)ROOM._MAX)
             Debug.LogError("NECESITAS PONER MÁS/MENOS HABITACIONES O MODIFICAR EL ENUM");
+
         //inicializamos el juego en las afueras
         changeRoom(ROOM.OUTSIDE);
     }
@@ -40,8 +42,6 @@ public class GameManager : MonoBehaviour
             else
                 changeRoom(_actualRoom + 1);
         }
-
-        rooms[(int)_actualRoom].logic();
     }
 
 
@@ -66,4 +66,8 @@ public class GameManager : MonoBehaviour
         Debug.Log(_actualRoom);
 
     }
+
+    public ROOM checkRoom() { return _actualRoom; }
+
+    public Transform getPlayer() { return player.transform; }
 }

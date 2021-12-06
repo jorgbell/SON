@@ -46,4 +46,6 @@ public class ObjectsPool : MonoBehaviour
 
         return result;
     }
+
+    public int getPoolSize() { return size; }
 }

@@ -8,15 +8,14 @@ public class OutsideBehaviour : RoomBehaviour
     private float nextTime = 0.0f;
     public float nightValueChangeTime = 0.1f; //seconds
     public float changePerTime = 0.01f; //each nightValueChangeTime it changes this value
+    public FMODUnity.StudioEventEmitter ost;
 
-
-    //OVERRIDE
-    public override void logic()
+    private void Update()
     {
         if (!roomEnabled)
             return;
         float time = Time.time;
-        if(time >= nextTime+nightValueChangeTime)
+        if (time >= nextTime + nightValueChangeTime)
         {
             nextTime = time + nightValueChangeTime;
 
@@ -25,16 +24,15 @@ public class OutsideBehaviour : RoomBehaviour
                 nightValue = 1;
                 changePerTime *= -1; //va hacia atrás
             }
-            else if(nightValue <= 0f)
+            else if (nightValue <= 0f)
             {
                 nightValue = 0;
                 changePerTime *= -1;
             }
 
             nightValue += changePerTime;
-            _pools[0].getSound(0).SetParameter("NightValue", nightValue);
+            ost.SetParameter("NightValue", nightValue);
         }
-
     }
 
     public override void enable()

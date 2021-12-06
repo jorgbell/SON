@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8f795866-c969-40aa-8221-e0734d12a597}">
+		<property name="name">
+			<value>BathroomDistance</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2a9e81e7-b530-4605-9018-a72173789692}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{34866401-2dcb-451e-900a-7939643f1beb}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{34866401-2dcb-451e-900a-7939643f1beb}">
+		<property name="minimum">
+			<value>-20</value>
+		</property>
+		<property name="maximum">
+			<value>20</value>
+		</property>
+		<property name="initialValue">
+			<value>-20</value>
+		</property>
+	</object>
+</objects>
