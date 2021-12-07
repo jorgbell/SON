@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public RoomBehaviour[] rooms = new RoomBehaviour[(int)ROOM._MAX];
     public FMODUnity.StudioGlobalParameterTrigger roomTrigger;
     public PlayerMovement player;
-
     private void Awake()
     {        
         //patrón singleton
@@ -62,6 +61,7 @@ public class GameManager : MonoBehaviour
         _actualRoom = newRoom;
         roomTrigger.TriggerParameters((int)_actualRoom);
         rooms[(int)_actualRoom].enable();
+        
 
         Debug.Log(_actualRoom);
 

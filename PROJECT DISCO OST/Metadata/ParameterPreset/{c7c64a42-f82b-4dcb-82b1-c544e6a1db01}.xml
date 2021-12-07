@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{c7c64a42-f82b-4dcb-82b1-c544e6a1db01}">
+		<property name="name">
+			<value>PoolDistance</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2a9e81e7-b530-4605-9018-a72173789692}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0b8c05a5-233f-4fa5-9e23-a614568826f5}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0b8c05a5-233f-4fa5-9e23-a614568826f5}">
+		<property name="maximum">
+			<value>20</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
