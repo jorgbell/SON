@@ -31,19 +31,6 @@ public class GameManager : MonoBehaviour
         changeRoom(ROOM.OUTSIDE);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (_actualRoom + 1 == ROOM._MAX)
-                changeRoom(ROOM.OUTSIDE);
-            else
-                changeRoom(_actualRoom + 1);
-        }
-    }
-
-
     public void changeRoom(ROOM newRoom)
     {
         
