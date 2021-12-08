@@ -16,15 +16,17 @@ public class PlayerMovement : MonoBehaviour
     public float _checkSphereRadius = 0.4f;
     public LayerMask _groundMask;
     private bool _isOnGround;
+    private bool swimming = false;
 
     //SOUND
-    private FMODUnity.StudioGlobalParameterTrigger walkGlobalParameter;
+    public FMODUnity.StudioGlobalParameterTrigger walkGlobalParameter;
+    public FMODUnity.StudioGlobalParameterTrigger swimGlobalParameter;
+    public FMODUnity.StudioEventEmitter splashSound;
 
 
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
-        walkGlobalParameter = GetComponent<FMODUnity.StudioGlobalParameterTrigger>();
     }
     void Update()
     {
@@ -45,5 +47,29 @@ public class PlayerMovement : MonoBehaviour
         _controller.Move(movement * _speed * Time.deltaTime);
         velocity.y += _gravityFactor * Time.deltaTime;
         _controller.Move(velocity * Time.deltaTime); //la formula de la velocidad multiplica por t al cuadrado
+
+
+
+        if (!swimming && transform.position.y < 0)
+            startSwimming();
+        else if (swimming && transform.position.y >= 0)
+            stopSwimming();
+
+    }
+
+    private void startSwimming()
+    {
+        Debug.Log("Estoy nadando");
+        splashSound.Play();
+        swimGlobalParameter.TriggerParameters(1);
+        swimming = true;
+    }
+
+    private void stopSwimming()
+    {
+        Debug.Log("Ya no estoy nadando");
+        swimGlobalParameter.TriggerParameters(0);
+        splashSound.Stop();
+        swimming = false;
     }
 }

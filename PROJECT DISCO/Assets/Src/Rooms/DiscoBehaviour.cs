@@ -35,7 +35,7 @@ public class DiscoBehaviour : RoomBehaviour
                 break;
             case ROOM.POOL:
                 discoPlaylist.SetParameter("PoolDistance", poolDistance);
-                Debug.Log(poolDistance);
+                //Debug.Log(poolDistance);
                 break;
             case ROOM.DISCO:
                 break;
