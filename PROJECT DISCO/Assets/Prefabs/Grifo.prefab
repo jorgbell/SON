@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionSound: {fileID: 451973377130493580}
   activationKey: 32
+  loop: 1
 --- !u!114 &451973377130493580
 MonoBehaviour:
   m_ObjectHideFlags: 0

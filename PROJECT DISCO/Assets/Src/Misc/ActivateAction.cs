@@ -6,23 +6,27 @@ public class ActivateAction : MonoBehaviour
 {
     public FMODUnity.StudioEventEmitter actionSound;
     public KeyCode activationKey;
+    public bool loop = false;
+    private bool isPlaying = false;
 
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetKeyDown(activationKey))
         {
-            Debug.Log("ACTIVADO");
-            //actionSound.Play();
+            if(loop && isPlaying)
+            {
+                Debug.Log("DESACTIVADO");
+                actionSound.Stop();
+                isPlaying = false;
+            }
+            else
+            {
+                Debug.Log("ACTIVADO");
+                actionSound.Play();
+                isPlaying = true;
+            }
+            
         }
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (Input.GetKeyDown(activationKey))
-        {
-            Debug.Log("ACTIVADO");
-
-            //actionSound.Play();
-        }
-    }
 }
