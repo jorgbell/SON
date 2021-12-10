@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance = null;
     private ROOM _actualRoom = ROOM._MAX; //inicializamos vacío
+    public ROOM initialRoom = ROOM.OUTSIDE;
     public RoomBehaviour[] rooms = new RoomBehaviour[(int)ROOM._MAX];
     public FMODUnity.StudioGlobalParameterTrigger roomTrigger;
     public PlayerMovement player;
+
+    //UI
+    public Text zoneText;
     private void Awake()
     {        
         //patrón singleton
@@ -28,7 +33,13 @@ public class GameManager : MonoBehaviour
             Debug.LogError("NECESITAS PONER MÁS/MENOS HABITACIONES O MODIFICAR EL ENUM");
 
         //inicializamos el juego en las afueras
-        changeRoom(ROOM.OUTSIDE);
+        changeRoom(initialRoom);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.Escape))
+            Application.Quit();
     }
 
     public void changeRoom(ROOM newRoom)
@@ -51,6 +62,7 @@ public class GameManager : MonoBehaviour
         
 
         Debug.Log(_actualRoom);
+        zoneText.text = "ZONE: " + _actualRoom.ToString();
 
     }
 

@@ -38,6 +38,13 @@ public class DiscoBehaviour : RoomBehaviour
                 //Debug.Log(poolDistance);
                 break;
             case ROOM.DISCO:
+                float pimba = poolDistance;
+                if (checkPoolPosition())//comprueba si está delante del objeto (más cerca de la piscina que de la disco)
+                    pimba = poolDistance;
+                else
+                    pimba = 0;
+                discoPlaylist.SetParameter("PoolDistance", pimba);
+                Debug.Log(pimba);
                 break;
             default:
                 break;
@@ -54,6 +61,12 @@ public class DiscoBehaviour : RoomBehaviour
         return res;
     }
 
+    private bool checkPoolPosition()
+    {
+        if (player.position.x >= poolDoor.position.x)
+            return true;
+        return false;
+    }
 
 
     public override void enable()
@@ -61,7 +74,7 @@ public class DiscoBehaviour : RoomBehaviour
         base.enable();
         discoPlaylist.SetParameter("OutsideDistance", 0); //seteamos al máximo de cercanía la distancia a la discoteca para evitar problemas
         discoPlaylist.SetParameter("BathroomDistance", -20); //lo mismo para el baño
-        discoPlaylist.SetParameter("PoolDistance", 0); //lo mismo para el baño
+        discoPlaylist.SetParameter("PoolDistance", 0); //lo mismo para la piscina
 
     }
 

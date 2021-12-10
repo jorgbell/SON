@@ -49,8 +49,7 @@
 	</object>
 	<object class="MasterTrack" id="{7946fbbf-9c54-48f6-99c1-70bfef1580f3}">
 		<relationship name="automationTracks">
-			<destination>{42a1f725-4d7a-4273-af90-2ff3534242b4}</destination>
-			<destination>{ee04d9f0-3254-41a4-b284-6ff3fb6b63ff}</destination>
+			<destination>{1587ad35-fe30-468b-990d-5c9f7dabbe72}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{9fc2d054-1eb2-46bc-b804-ea45b2138dd3}</destination>
@@ -128,14 +127,9 @@
 			<destination>{0cdb885d-1f62-4f69-8b21-f78db3eb6b84}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationTrack" id="{42a1f725-4d7a-4273-af90-2ff3534242b4}">
+	<object class="AutomationTrack" id="{1587ad35-fe30-468b-990d-5c9f7dabbe72}">
 		<relationship name="automator">
-			<destination>{a6c8c868-1272-4649-a7cb-df7d0a13e2d8}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationTrack" id="{ee04d9f0-3254-41a4-b284-6ff3fb6b63ff}">
-		<relationship name="automator">
-			<destination>{0dad1801-bd60-40a1-907f-069e9e9b1474}</destination>
+			<destination>{a3e71b54-0e63-4708-824a-828d54446c6d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{a3821a48-166e-41fe-84ee-70359df20701}">
@@ -164,6 +158,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f443e729-aec0-4e0c-8a56-cb1c08821278}">
+		<property name="volume">
+			<value>5</value>
+		</property>
 		<property name="name">
 			<value>First</value>
 		</property>
@@ -204,7 +201,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{155f2a8f-7726-448b-8d0f-bb5e5a0431e1}">
 		<property name="volume">
-			<value>-6</value>
+			<value>5</value>
 		</property>
 		<property name="name">
 			<value>Second</value>
@@ -479,7 +476,7 @@
 			<value>0.049261083743842367</value>
 		</property>
 		<property name="value">
-			<value>3.81469727e-06</value>
+			<value>9</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{e931e547-9e55-4de1-a1a3-06f9fb49775b}">
@@ -487,7 +484,7 @@
 			<value>20</value>
 		</property>
 		<property name="value">
-			<value>-12</value>
+			<value>-3.00000381</value>
 		</property>
 	</object>
 	<object class="Automator" id="{a0679b25-e985-4535-bb01-f9d20120cd72}">

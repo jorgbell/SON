@@ -12,21 +12,22 @@ public class ActivateAction : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetKeyDown(activationKey))
-        {
-            if(loop && isPlaying)
-            {
-                Debug.Log("DESACTIVADO");
-                actionSound.Stop();
-                isPlaying = false;
-            }
-            else
-            {
-                Debug.Log("ACTIVADO");
-                actionSound.Play();
-                isPlaying = true;
-            }
-            
-        }
+            playObjectSound();
     }
 
+    public void playObjectSound()
+    {
+        if (loop && isPlaying)
+        {
+            Debug.Log("DESACTIVADO");
+            actionSound.Stop();
+            isPlaying = false;
+        }
+        else
+        {
+            Debug.Log("ACTIVADO");
+            actionSound.Play();
+            isPlaying = true;
+        }
+    }
 }
