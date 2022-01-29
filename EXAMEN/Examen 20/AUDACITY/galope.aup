@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="galope_data" version="1.3.0" audacityversion="2.3.3" sel0="0.0000000000" sel1="5.0042176871" vpos="0" h="0.0000000000" zoom="175.6020642202" rate="22050.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="Copyright message" value="The Sound Effects Library"/>
+		<tag name="GENRE" value="Other"/>
+	</tags>
+	<wavetrack name="Pista de audio" isSelected="1" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="22050" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="110343">
+				<waveblock start="0">
+					<simpleblockfile filename="e080877b.au" len="110343" min="-0.584603" max="0.578979" rms="0.029219"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="3">
+				<controlpoint t="2.289266938776" val="0.971830964088"/>
+				<controlpoint t="4.999941224490" val="0.042253494263"/>
+				<controlpoint t="4.999941224490" val="0.915492951870"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Pista de audio" isSelected="1" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="22050" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="110343">
+				<waveblock start="0">
+					<simpleblockfile filename="e080869d.au" len="110343" min="-0.584603" max="0.578979" rms="0.029219"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="2">
+				<controlpoint t="0.028473469388" val="0.028169035912"/>
+				<controlpoint t="2.317740408163" val="0.915492951870"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+</project>

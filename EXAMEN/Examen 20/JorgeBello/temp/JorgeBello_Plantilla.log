@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\jorge\Desktop\ESTUDIOS\21-22\1\SON\SON_Project_Disco\EXAMEN\Examen 20\JorgeBello\src\main.cpp(35,1): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\jorge\Desktop\ESTUDIOS\21-22\1\SON\SON_Project_Disco\EXAMEN\Examen 20\JorgeBello\src\main.cpp(88,22): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\jorge\Desktop\ESTUDIOS\21-22\1\SON\SON_Project_Disco\EXAMEN\Examen 20\JorgeBello\src\main.cpp(95,22): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\jorge\Desktop\ESTUDIOS\21-22\1\SON\SON_Project_Disco\EXAMEN\Examen 20\JorgeBello\src\main.cpp(134,20): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\jorge\Desktop\ESTUDIOS\21-22\1\SON\SON_Project_Disco\EXAMEN\Examen 20\JorgeBello\src\main.cpp(142,19): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+          1 archivo(s) copiado(s).
+  JorgeBello_Plantilla.vcxproj -> C:\Users\jorge\Desktop\ESTUDIOS\21-22\1\SON\SON_Project_Disco\EXAMEN\Examen 20\JorgeBello\exe\JorgeBello_Plantilla.exe
